@@ -1,0 +1,10 @@
+*.tif
+# ECW
+*.ecw
+# MrSID
+*.sid
+*.sdw
+# MBTiles
+*.mbtiles
+# PMTiles
+*.pmtiles
