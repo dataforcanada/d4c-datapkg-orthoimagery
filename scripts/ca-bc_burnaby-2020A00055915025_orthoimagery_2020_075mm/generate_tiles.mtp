@@ -1,0 +1,16 @@
+-mbtiles_compatible
+-srs_epsg
+-jpeg_allow_large
+-scale 2.000000
+-store mbtiles
+-f webp32 -webp_quality 85 -webp_lossy -webp_preset photo
+-name "City of Burnaby Orthoimagery for 2020 / Ortho-imagerie de la Ville de Burnaby de 2020"
+-description "Orthoimagery 7.5cm resolution. / Ortho-imagerie à résolution de 7,5 cm."
+-attribution "Source: data.burnaby.ca / Source: data.burnaby.ca"
+-sparse
+-resampling cubic
+-overviews_resampling average
+"/home/ripd/Documents/Personal/Projects/dataforcanada/process-orthoimagery/data/input/ca-bc_burnaby-2020A00055915025/Burnaby_2020_7.5cm.sid"
+-nodata 255 255 255
+-ignore_alpha
+-b 1 -b 2 -b 3 
