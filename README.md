@@ -1,6 +1,6 @@
 # d4c-datapkg-orthoimagery
 
-Look through our [d4c-datapkg-orthoimagery](https://github.com/dataforcanada/d4c-datapkg-orthoimagery) repo for the datasets that are currently being processed and datasets being acquired. There is still *lots* of work to do to make it ready for systems. While the data processing workflow is still under development, you can [preview sample datasets](#download-and-preview) below.
+Look through our [d4c-datapkg-orthoimagery](https://github.com/dataforcanada/d4c-datapkg-orthoimagery) repo for the datasets that are currently being processed and datasets being acquired.
 
 ## Development Environment
 
@@ -54,17 +54,17 @@ pmtiles convert --tmpdir=~/tmp/pmtiles ${MBTILES_OUTPUT_FILE} ${PMTILES_OUTPUT_F
 
 Here is a table of some of the datasets created from the current process.
 
-| Place | ISO | Year | Provider | Dataset ID & Preview | PMTiles |
+| Place | ISO | Year | Provider | Dataset ID | PMTiles |
 | --- | --- | --- | --- | --- | --- |
-| Canada | CA | 2025 | Versatiles | [ca_versatiles-2021A000011124_d4c-datapkg-orthoimagery_2025-08-10_satellite_v0.1.0-beta](https://pmtiles.io/#url=https://data-01.labs.dataforcanada.org/processed/ca_versatiles-2021A000011124_d4c-datapkg-orthoimagery_2025-08-10_satellite_v0.1.0-beta.pmtiles) | [Download](https://data-01.labs.dataforcanada.org/processed/ca_versatiles-2021A000011124_d4c-datapkg-orthoimagery_2025-08-10_satellite_v0.1.0-beta.pmtiles) |
-| Canada | CA | 2020 | NRCan | [ca_nrcan-2021A000011124_d4c-datapkg-orthoimagery_2020_30m_v0.1.0-beta](https://pmtiles.io/#url=https://data-01.labs.dataforcanada.org/processed/ca_nrcan-2021A000011124_d4c-datapkg-orthoimagery_2020_30m_v0.1.0-beta.pmtiles) | [Download](https://data-01.labs.dataforcanada.org/processed/ca_nrcan-2021A000011124_d4c-datapkg-orthoimagery_2020_30m_v0.1.0-beta.pmtiles) |
-| Edmonton | CA-AB | 2023 | Edmonton | [ca-ab_edmonton-2023A00054811061_d4c-datapkg-orthoimagery_2023_075mm_v0.1.0-beta](https://pmtiles.io/#url=https://data-01.labs.dataforcanada.org/processed/ca-ab_edmonton-2023A00054811061_d4c-datapkg-orthoimagery_2023_075mm_v0.1.0-beta.pmtiles) | [Download](https://data-01.labs.dataforcanada.org/processed/ca-ab_edmonton-2023A00054811061_d4c-datapkg-orthoimagery_2023_075mm_v0.1.0-beta.pmtiles) |
-| Red Deer | CA-AB | 2024 | Red Deer | [ca-ab_red-deer-2024A00054808011_d4c-datapkg-orthoimagery_2024_075mm_v0.1.0-beta](https://pmtiles.io/#url=https://data-01.labs.dataforcanada.org/processed/ca-ab_red-deer-2024A00054808011_d4c-datapkg-orthoimagery_2024_075mm_v0.1.0-beta.pmtiles) | [Download](https://data-01.labs.dataforcanada.org/processed/ca-ab_red-deer-2024A00054808011_d4c-datapkg-orthoimagery_2024_075mm_v0.1.0-beta.pmtiles) |
-| Red Deer | CA-AB | 2025 | Red Deer | [ca-ab_red-deer-2025A00054808011_d4c-datapkg-orthoimagery_2025_075mm_v0.1.0-beta](https://pmtiles.io/#url=https://data-01.labs.dataforcanada.org/processed/ca-ab_red-deer-2025A00054808011_d4c-datapkg-orthoimagery_2025_075mm_v0.1.0-beta.pmtiles) | [Download](https://data-01.labs.dataforcanada.org/processed/ca-ab_red-deer-2025A00054808011_d4c-datapkg-orthoimagery_2025_075mm_v0.1.0-beta.pmtiles) |
-| Burnaby | CA-BC | 2020 | Burnaby | [ca-bc_burnaby-2020A00055915025_d4c-datapkg-orthoimagery_2020_075mm_v0.1.0-beta](https://pmtiles.io/#url=https://data-01.labs.dataforcanada.org/processed/ca-bc_burnaby-2020A00055915025_d4c-datapkg-orthoimagery_2020_075mm_v0.1.0-beta.pmtiles) | [Download](https://data-01.labs.dataforcanada.org/processed/ca-bc_burnaby-2020A00055915025_d4c-datapkg-orthoimagery_2020_075mm_v0.1.0-beta.pmtiles) |
-| Vancouver | CA-BC | 2022 | Vancouver | [ca-bc_vancouver-2022A00055915022_d4c-datapkg-orthoimagery_2022_075mm_v0.1.0-beta](https://pmtiles.io/#url=https://data-01.labs.dataforcanada.org/processed/ca-bc_vancouver-2022A00055915022_d4c-datapkg-orthoimagery_2022_075mm_v0.1.0-beta.pmtiles) | [Download](https://data-01.labs.dataforcanada.org/processed/ca-bc_vancouver-2022A00055915022_d4c-datapkg-orthoimagery_2022_075mm_v0.1.0-beta.pmtiles) |
-| Winnipeg | CA-MB | 2024 | Winnipeg | [ca-mb_winnipeg-2024A00054611040_d4c-datapkg-orthoimagery_2024_075mm_v0.1.0-beta](https://pmtiles.io/#url=https://data-01.labs.dataforcanada.org/processed/ca-mb_winnipeg-2024A00054611040_d4c-datapkg-orthoimagery_2024_075mm_v0.1.0-beta.pmtiles) | [Download](https://data-01.labs.dataforcanada.org/processed/ca-mb_winnipeg-2024A00054611040_d4c-datapkg-orthoimagery_2024_075mm_v0.1.0-beta.pmtiles) |
-| Whitehorse | CA-YT | 2019 | Whitehorse | [ca-yt_whitehorse-2019A000556001009_d4c-datapkg-orthoimagery_2019_200mm_v0.1.0-beta](https://pmtiles.io/#url=https://data-01.labs.dataforcanada.org/processed/ca-yt_whitehorse-2019A000556001009_d4c-datapkg-orthoimagery_2019_200mm_v0.1.0-beta.pmtiles) | [Download](https://data-01.labs.dataforcanada.org/processed/ca-yt_whitehorse-2019A000556001009_d4c-datapkg-orthoimagery_2019_200mm_v0.1.0-beta.pmtiles) |
+| Canada | CA | 2025 | Versatiles | ca_versatiles-2021A000011124_d4c-datapkg-orthoimagery_2025-08-10_satellite_v0.1.0-beta | Download |
+| Canada | CA | 2020 | NRCan | ca_nrcan-2021A000011124_d4c-datapkg-orthoimagery_2020_30m_v0.1.0-beta | Download |
+| Edmonton | CA-AB | 2023 | Edmonton | ca-ab_edmonton-2023A00054811061_d4c-datapkg-orthoimagery_2023_075mm_v0.1.0-beta | Download |
+| Red Deer | CA-AB | 2024 | Red Deer | ca-ab_red-deer-2024A00054808011_d4c-datapkg-orthoimagery_2024_075mm_v0.1.0-beta | Download |
+| Red Deer | CA-AB | 2025 | Red Deer | ca-ab_red-deer-2025A00054808011_d4c-datapkg-orthoimagery_2025_075mm_v0.1.0-beta | Download |
+| Burnaby | CA-BC | 2020 | Burnaby | ca-bc_burnaby-2020A00055915025_d4c-datapkg-orthoimagery_2020_075mm_v0.1.0-beta | Download |
+| Vancouver | CA-BC | 2022 | Vancouver | ca-bc_vancouver-2022A00055915022_d4c-datapkg-orthoimagery_2022_075mm_v0.1.0-beta | Download |
+| Winnipeg | CA-MB | 2024 | Winnipeg | ca-mb_winnipeg-2024A00054611040_d4c-datapkg-orthoimagery_2024_075mm_v0.1.0-beta | Download |
+| Whitehorse | CA-YT | 2019 | Whitehorse | ca-yt_whitehorse-2019A000556001009_d4c-datapkg-orthoimagery_2019_200mm_v0.1.0-beta | Download |
 
 ## The Plan
 
