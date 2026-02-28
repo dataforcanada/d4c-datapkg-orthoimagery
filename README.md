@@ -56,16 +56,16 @@ Here is a table of some of the datasets created from the current process.
 
 | Place | ISO | Year | Provider | Dataset ID | PMTiles |
 | --- | --- | --- | --- | --- | --- |
-| Canada | CA | 2025 | Versatiles | ca_versatiles-2021A000011124_d4c-datapkg-orthoimagery_2025-08-10_satellite_v0.1.0-beta | Coming Soon |
-| Canada | CA | 2020 | NRCan | ca_nrcan-2021A000011124_d4c-datapkg-orthoimagery_2020_30m_v0.1.0-beta | Coming Soon |
-| Edmonton | CA-AB | 2023 | Edmonton | ca-ab_edmonton-2023A00054811061_d4c-datapkg-orthoimagery_2023_075mm_v0.1.0-beta | Coming Soon |
-| Red Deer | CA-AB | 2024 | Red Deer | ca-ab_red-deer-2024A00054808011_d4c-datapkg-orthoimagery_2024_075mm_v0.1.0-beta | Coming Soon |
-| Red Deer | CA-AB | 2025 | Red Deer | ca-ab_red-deer-2025A00054808011_d4c-datapkg-orthoimagery_2025_075mm_v0.1.0-beta | Coming Soon |
-| Burnaby | CA-BC | 2020 | Burnaby | ca-bc_burnaby-2020A00055915025_d4c-datapkg-orthoimagery_2020_075mm_v0.1.0-beta | Coming Soon |
-| Vancouver | CA-BC | 2022 | Vancouver | ca-bc_vancouver-2022A00055915022_d4c-datapkg-orthoimagery_2022_075mm_v0.1.0-beta | Coming Soon |
-| Winnipeg | CA-MB | 2024 | Winnipeg | ca-mb_winnipeg-2024A00054611040_d4c-datapkg-orthoimagery_2024_075mm_v0.1.0-beta | Coming Soon |
-| Whitehorse | CA-YT | 2019 | Whitehorse | ca-yt_whitehorse-2019A000556001009_d4c-datapkg-orthoimagery_2019_200mm_v0.1.0-beta | Coming Soon |
-| Ontario | CA-ON | 2024 | Geospatial Ontario |   ca-on_geospatial-ontario-2024A000235_d4c-datapkg-orthoimagery_2024_16cm_v0.0.1-beta | Coming Soon |
+| Canada | CA | 2025 | Versatiles | ca_versatiles-2021A000011124_d4c-datapkg-orthoimagery_2025-08-10_satellite_v0.1.0-beta | In Lab |
+| Canada | CA | 2020 | NRCan | ca_nrcan-2021A000011124_d4c-datapkg-orthoimagery_2020_30m_v0.1.0-beta | In Lab |
+| Edmonton | CA-AB | 2023 | Edmonton | ca-ab_edmonton-2023A00054811061_d4c-datapkg-orthoimagery_2023_075mm_v0.1.0-beta | In Lab |
+| Red Deer | CA-AB | 2024 | Red Deer | ca-ab_red-deer-2024A00054808011_d4c-datapkg-orthoimagery_2024_075mm_v0.1.0-beta | In Lab |
+| Red Deer | CA-AB | 2025 | Red Deer | ca-ab_red-deer-2025A00054808011_d4c-datapkg-orthoimagery_2025_075mm_v0.1.0-beta | In Lab |
+| Burnaby | CA-BC | 2020 | Burnaby | ca-bc_burnaby-2020A00055915025_d4c-datapkg-orthoimagery_2020_075mm_v0.1.0-beta | In Lab |
+| Vancouver | CA-BC | 2022 | Vancouver | ca-bc_vancouver-2022A00055915022_d4c-datapkg-orthoimagery_2022_075mm_v0.1.0-beta | In Lab |
+| Winnipeg | CA-MB | 2024 | Winnipeg | ca-mb_winnipeg-2024A00054611040_d4c-datapkg-orthoimagery_2024_075mm_v0.1.0-beta | In Lab |
+| Whitehorse | CA-YT | 2019 | Whitehorse | ca-yt_whitehorse-2019A000556001009_d4c-datapkg-orthoimagery_2019_200mm_v0.1.0-beta | In Lab |
+| Ontario | CA-ON | 2024 | Geospatial Ontario | ca-on_province_of_ontario-2024A000235_drape_eastern_ontario_orthoimagery_2024_16cm | In Lab |
 
 ## The Plan
 
