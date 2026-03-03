@@ -65,7 +65,7 @@ Here is a table of some of the datasets created from the current process.
 | Vancouver | CA-BC | 2022 | Vancouver | ca-bc_vancouver-2022A00055915022_d4c-datapkg-orthoimagery_2022_075mm_v0.1.0-beta | In Lab |
 | Winnipeg | CA-MB | 2024 | Winnipeg | ca-mb_winnipeg-2024A00054611040_d4c-datapkg-orthoimagery_2024_075mm_v0.1.0-beta | In Lab |
 | Whitehorse | CA-YT | 2019 | Whitehorse | ca-yt_whitehorse-2019A000556001009_d4c-datapkg-orthoimagery_2019_200mm_v0.1.0-beta | In Lab |
-| Ontario | CA-ON | 2024 | Geospatial Ontario | ca-on_province_of_ontario-2024A000235_drape_eastern_ontario_orthoimagery_2024_16cm | In Lab |
+| Ontario | CA-ON | 2024 | Geospatial Ontario | ca-on_province_of_ontario-2024A000235_drape_eastern_ontario_orthoimagery_2024_16cm_v0.1.0-beta  | In Lab |
 
 ## The Plan
 
