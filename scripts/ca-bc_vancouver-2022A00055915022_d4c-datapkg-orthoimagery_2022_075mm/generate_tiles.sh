@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# TODO: Update paths in this script
 PROJECT_DIR="~/Documents/Personal/Projects/dataforcanada/process-orthoimagery-dev"
 DATA_DIR="${PROJECT_DIR}/data"
 DATA_INPUT_DIR="${DATA_DIR}/input/maptiler_engine_experiments"
