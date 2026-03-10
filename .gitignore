@@ -1,10 +1,14 @@
+# GeoPackage
+*.gpkg
+# MBTiles
+*.mbtiles
+# PMTiles
+*.pmtiles
+# ZIP
+*.zip
 *.tif
 # ECW
 *.ecw
 # MrSID
 *.sid
 *.sdw
-# MBTiles
-*.mbtiles
-# PMTiles
-*.pmtiles
