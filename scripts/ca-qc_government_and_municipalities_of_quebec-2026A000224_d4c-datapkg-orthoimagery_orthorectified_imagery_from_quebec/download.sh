@@ -9,7 +9,12 @@ mv Index_Imagerie_orthorectifiee.gpkg "${DATASET_ID}_2026-03-10.gpkg"
 
 # Convert the GeoPackage to urls.txt
 ogr2ogr -f CSV /vsistdout/ "${DATASET_ID}_2026-03-10.gpkg" \
-  -sql "SELECT TELECHARGEMENT_FICHIER FROM Index_Orthomosaique
+  -sql "SELECT TELECHARGEMENT_FICHIER FROM Index_Orthomosaique WHERE PLUS_RECENTE = 'Oui'
         UNION ALL
-        SELECT TELECHARGEMENT_FICHIER FROM Index_Orthophotographie" \
+        SELECT TELECHARGEMENT_FICHIER FROM Index_Orthophotographie WHERE PLUS_RECENTE = 'Oui'
+        UNION ALL
+        SELECT TELECHARGEMENT_FICHIER FROM Index_Orthomosaique WHERE PLUS_RECENTE = 'Non'
+        UNION ALL
+        SELECT TELECHARGEMENT_FICHIER FROM Index_Orthophotographie WHERE PLUS_RECENTE = 'Non'
+        " \
   | tail -n +2 > "${DATASET_ID}_2026-03-10.txt"
