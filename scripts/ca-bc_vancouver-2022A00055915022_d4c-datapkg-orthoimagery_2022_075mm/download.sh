@@ -1,12 +1,10 @@
 #!/bin/bash
 #
-# download.sh — Download Vancouver 2022 orthoimagery dataset
+# download.sh — Download Vancouver 2022 orthoimagery index file
 #
 # This script:
 #   1. Downloads the dataset index as a Parquet file from Vancouver Open Data.
 #   2. Extracts image URLs from the Parquet file using DuckDB.
-#   3. Creates the data input directory.
-#   4. Downloads all images in parallel using aria2c.
 #
 # Usage:
 #   cd scripts/ca-bc_vancouver-2022A00055915022_d4c-datapkg-orthoimagery_2022_075mm
