@@ -48,24 +48,3 @@ duckdb -noheader -csv -c \
   > "${URL_FILE}"
 
 echo "    URL list written to: ${URL_FILE}"
-
-# ---------------------------------------------------------------------------
-# Step 3 — Create the data input directory
-# ---------------------------------------------------------------------------
-echo "==> Step 3: Creating data input directory..."
-mkdir -p "${DATA_INPUT_DIR}"
-# Resolve to an absolute path to avoid any relative-path surprises
-DATA_INPUT_DIR="$(cd "${DATA_INPUT_DIR}" && pwd)"
-echo "    Directory ready: ${DATA_INPUT_DIR}"
-
-# ---------------------------------------------------------------------------
-# Step 4 — Download all images into the data input directory
-# ---------------------------------------------------------------------------
-echo "==> Step 4: Downloading images with aria2c..."
-aria2c \
-  -i "${URL_FILE}" \
-  -j 12 \
-  -x 4 \
-  -d "${DATA_INPUT_DIR}"
-
-echo "==> Done. All files downloaded to: ${DATA_INPUT_DIR}"
