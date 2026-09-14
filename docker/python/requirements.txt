@@ -1,0 +1,14 @@
+# Python stack for the stage-2 image (docker/python/Dockerfile).
+#
+# rasterio is *always* built from source here so it links against the image's
+# GDAL (with ECW + MrSID) instead of the libgdal bundled in its PyPI wheels.
+# The Dockerfile enforces that with `uv pip install --no-binary rasterio` and
+# /etc/uv/uv.toml makes later installs in the image do the same.
+#
+# Versions pinned 2026-09-14 (all support Python 3.14, the Ubuntu 26.04 system
+# interpreter this image uses). Bump deliberately, then rebuild + re-verify.
+numpy==2.5.3
+rasterio==1.5.1
+rioxarray==0.23.0
+xarray==2026.7.0
+dask[array]==2026.8.0

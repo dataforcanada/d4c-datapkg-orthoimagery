@@ -19,6 +19,11 @@
 *.sdw
 *.prj
 
+### Python ###
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
 
 # GDAL source checkout used by docker/gdal/build.sh
 docker/gdal/src/

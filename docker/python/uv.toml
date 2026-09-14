@@ -1,0 +1,16 @@
+# System-wide uv config for the image, installed at /etc/uv/uv.toml.
+#
+# Packages whose PyPI wheels bundle their own libgdal. A bundled libgdal would
+# shadow the image's GDAL (built with ECW + MrSID) and silently lose both
+# drivers, so uv must always build these from source against `gdal-config`.
+#
+# Two keys because uv has two interfaces with different option names:
+#   - [pip] no-binary     -> `uv pip install ...`
+#   - no-binary-package   -> `uv sync` / `uv add` / `uv lock` / `uv run`
+# (UV_NO_BINARY_PACKAGE only affects the second one — verified on uv 0.12.13.)
+# A project's own uv.toml/pyproject.toml can override this; it is a default.
+
+no-binary-package = ["rasterio", "fiona", "pyogrio", "gdal"]
+
+[pip]
+no-binary = ["rasterio", "fiona", "pyogrio", "gdal"]

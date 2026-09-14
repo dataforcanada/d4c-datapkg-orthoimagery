@@ -1,0 +1,41 @@
+{
+  "name": "d4c-datapkg-orthoimagery",
+  // Pre-built locally (it embeds proprietary SDKs, so it is not on a registry):
+  //   docker/gdal/build.sh    -> dataforcanada/gdal-ecw-mrsid:3.13.3        (GDAL + ECW + MrSID)
+  //   docker/python/build.sh  -> dataforcanada/gdal-ecw-mrsid-python:3.13.3 (+ uv venv: rioxarray, rasterio, ...)
+  // linux/amd64 only. To bump GDAL, rebuild both stages and change this tag.
+  "image": "dataforcanada/gdal-ecw-mrsid-python:3.13.3",
+  // Fail with a clear message if the image has not been built yet.
+  "initializeCommand": "bash ${localWorkspaceFolder}/.devcontainer/check-image.sh dataforcanada/gdal-ecw-mrsid-python:3.13.3",
+  // Non-root user created in docker/python/Dockerfile; its UID/GID is remapped
+  // to the host user's on first start so bind-mounted files keep sane ownership.
+  "remoteUser": "d4c",
+  "updateRemoteUserUID": true,
+  // Assert (not print) that ECW + MrSID are usable from GDAL and rasterio.
+  "postCreateCommand": "verify-gdal-drivers",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "charliermarsh.ruff",
+        "ms-toolsai.jupyter",
+        "tamasfe.even-better-toml",
+        "ms-azuretools.vscode-containers",
+        "anthropic.claude-code"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/opt/venv/bin/python",
+        "python.terminal.activateEnvironment": false,
+        "[python]": {
+          "editor.defaultFormatter": "charliermarsh.ruff"
+        },
+        "files.exclude": {
+          "**/__pycache__": true,
+          "**/.ruff_cache": true,
+          "**/.pytest_cache": true
+        }
+      }
+    }
+  }
+}
