@@ -7,8 +7,18 @@
 # ZIP
 *.zip
 *.tif
+*.tfw
+*.xml
 # ECW
 *.ecw
+*.ECW
+*.eww
+*.ers
 # MrSID
 *.sid
 *.sdw
+*.prj
+
+
+# GDAL source checkout used by docker/gdal/build.sh
+docker/gdal/src/
