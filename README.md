@@ -2,54 +2,6 @@
 
 Look through our [d4c-datapkg-orthoimagery](https://github.com/dataforcanada/d4c-datapkg-orthoimagery) repo for the datasets that are currently being processed and datasets being acquired.
 
-## Development Environment
-
-Although we prioritize open-source tools, we currently use [MapTiler Engine Pro](https://www.maptiler.com/engine/pricing) because it outperforms available open-source alternatives for this specific workflow.
-
-## Specifications of Tile Packages
-
-The specifications for the tile packages are defined in this code.
-
-```bash
-#!/bin/bash
-PROJECT_DIR="~/Documents/Personal/Projects/dataforcanada/d4c-datapkg-orthoimagery"
-DATASET_ID="ca-mb_winnipeg-2024A00054611040_orthoimagery_2024_075mm"
-DATA_DIR="${PROJECT_DIR}/data"
-DATA_INPUT_DIR="${DATA_DIR}/input/${DATASET_ID}"
-DATA_OUTPUT_DIR="${DATA_DIR}/output/${DATASET_ID}"
-
-MBTILES_OUTPUT_FILE="${DATA_OUTPUT_DIR}/${DATASET_ID}.mbtiles"
-PMTILES_OUTPUT_FILE="${DATA_OUTPUT_DIR}/${DATASET_ID}.pmtiles"
-
-# Define arguments in an array
-ARGS=(
-  -progress
-  -name "City of Winnipeg Orthoimagery for 2024 / Ortho-imagerie de la Ville de Winnipeg de 2024"
-  -description "Orthoimagery 7.5cm resolution. / Ortho-imagerie à résolution de 7,5 cm."
-  -attribution "Source: data.winnipeg.ca / Source: data.winnipeg.ca"
-  -srs_epsg
-  -mbtiles_compatible
-  -wo "NUM_THREADS=ALL_CPUS"
-  -wo "USE_OPENCL=TRUE"
-  -sparse
-  -scale 2.000000
-  -work_dir ~/tmp/maptiler_engine
-  -f webp32
-  -webp_quality 85
-  -webp_lossy
-  -webp_preset photo
-  -resampling cubic
-  -overviews_resampling average
-  -o "${MBTILES_OUTPUT_FILE}"
-  $DATA_INPUT_DIR/*.ecw
-)
-
-# Run the command with the array
-maptiler-engine "${ARGS[@]}"
-
-pmtiles convert --tmpdir=~/tmp/pmtiles ${MBTILES_OUTPUT_FILE} ${PMTILES_OUTPUT_FILE}
-```
-
 ## Download and Preview
 
 Here is a table of some of the datasets created from the current process.
