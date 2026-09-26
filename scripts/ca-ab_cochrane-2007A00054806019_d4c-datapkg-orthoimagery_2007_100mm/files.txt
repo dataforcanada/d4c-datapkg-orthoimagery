@@ -1,0 +1,6 @@
+https://files.cochrane.ca/GIS_Files/2007%20Aerial%20Products/2007%20Air%20Photo%20-%20MrSID/Cochrane_010.bulkproperties
+https://files.cochrane.ca/GIS_Files/2007%20Aerial%20Products/2007%20Air%20Photo%20-%20MrSID/Cochrane_010.histogram
+https://files.cochrane.ca/GIS_Files/2007%20Aerial%20Products/2007%20Air%20Photo%20-%20MrSID/Cochrane_010.sdw
+https://files.cochrane.ca/GIS_Files/2007%20Aerial%20Products/2007%20Air%20Photo%20-%20MrSID/Cochrane_010.sdwx
+https://files.cochrane.ca/GIS_Files/2007%20Aerial%20Products/2007%20Air%20Photo%20-%20MrSID/Cochrane_010.sid
+https://files.cochrane.ca/GIS_Files/2007%20Aerial%20Products/2007%20Air%20Photo%20-%20MrSID/Cochrane_010.sid.aux.xml
