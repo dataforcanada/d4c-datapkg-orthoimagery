@@ -1,0 +1,2 @@
+- Fixed the no data issue with `-nodata 255 255 255`
+- Quality actually turned out better when I removed the webp quality, preset, and high definition tiles
