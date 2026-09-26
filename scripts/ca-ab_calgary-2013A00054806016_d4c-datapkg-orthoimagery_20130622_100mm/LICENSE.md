@@ -68,4 +68,4 @@ means the natural or legal person, or body of persons corporate or incorporate, 
 
 ---
 
-Retrieved from https://data.calgary.ca/stories/s/Open-Calgary-Terms-of-Use/u45n-7awa on 2026-09-26
+Retrieved from https://data.calgary.ca/stories/s/Open-Calgary-Terms-of-Use/u45n-7awa on 2026-09-26.
