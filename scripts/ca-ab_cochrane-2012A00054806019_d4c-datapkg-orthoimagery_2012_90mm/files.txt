@@ -1,0 +1,4 @@
+https://files.cochrane.ca/GIS_Files/2012%20Aerial%20Products/2012%20Air%20Photo%20-%20MrSID/2012-CochraneBigBlock-June07-2012.sdw
+https://files.cochrane.ca/GIS_Files/2012%20Aerial%20Products/2012%20Air%20Photo%20-%20MrSID/2012-CochraneBigBlock-June07-2012.sid
+https://files.cochrane.ca/GIS_Files/2012%20Aerial%20Products/2012%20Air%20Photo%20-%20MrSID/2012-CochraneBigBlock-June07-2012.sid.aux.xml
+https://files.cochrane.ca/GIS_Files/2012%20Aerial%20Products/2012%20Air%20Photo%20-%20MrSID/2012-CochraneBigBlock-June07-2012.sid.xml
