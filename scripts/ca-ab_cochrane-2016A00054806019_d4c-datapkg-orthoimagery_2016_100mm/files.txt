@@ -1,0 +1,4 @@
+https://files.cochrane.ca/GIS_Files/2016%20Aerial%20Products/2016%20Air%20Photo%20-%20MrSID/Cochrane_Oct292016_Overall_Gen3.sdw
+https://files.cochrane.ca/GIS_Files/2016%20Aerial%20Products/2016%20Air%20Photo%20-%20MrSID/Cochrane_Oct292016_Overall_Gen3.sid
+https://files.cochrane.ca/GIS_Files/2016%20Aerial%20Products/2016%20Air%20Photo%20-%20MrSID/Cochrane_Oct292016_Overall_Gen3.sid.aux.xml
+https://files.cochrane.ca/GIS_Files/2016%20Aerial%20Products/2016%20Air%20Photo%20-%20MrSID/Cochrane_Oct292016_Overall_Gen3.sid.xml
