@@ -1,0 +1,4 @@
+https://files.cochrane.ca/GIS_Files/2005%20Aerial%20Products/2005%20Air%20Photo%20-%20MrSID/overview.aux
+https://files.cochrane.ca/GIS_Files/2005%20Aerial%20Products/2005%20Air%20Photo%20-%20MrSID/overview.sdw
+https://files.cochrane.ca/GIS_Files/2005%20Aerial%20Products/2005%20Air%20Photo%20-%20MrSID/overview.sid
+https://files.cochrane.ca/GIS_Files/2005%20Aerial%20Products/2005%20Air%20Photo%20-%20MrSID/overview.sid.aux.xml
