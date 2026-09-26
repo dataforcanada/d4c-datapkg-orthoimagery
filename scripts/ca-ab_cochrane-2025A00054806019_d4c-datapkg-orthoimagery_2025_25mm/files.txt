@@ -1,0 +1,3 @@
+https://files.cochrane.ca/GIS_Files/2025%20Aerial%20Products/2025%20Air%20Photo%20-%20MrSID/ABTCOC25-SID-COMBINED-2.5CM.prj
+https://files.cochrane.ca/GIS_Files/2025%20Aerial%20Products/2025%20Air%20Photo%20-%20MrSID/ABTCOC25-SID-COMBINED-2.5CM.sdw
+https://files.cochrane.ca/GIS_Files/2025%20Aerial%20Products/2025%20Air%20Photo%20-%20MrSID/ABTCOC25-SID-COMBINED-2.5CM.sid
