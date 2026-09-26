@@ -1,0 +1,4 @@
+https://files.cochrane.ca/GIS_Files/2002%20Aerial%20Products/2002%20Air%20Photo%20-%20MrSID/cochrane.aux
+https://files.cochrane.ca/GIS_Files/2002%20Aerial%20Products/2002%20Air%20Photo%20-%20MrSID/cochrane.sdw
+https://files.cochrane.ca/GIS_Files/2002%20Aerial%20Products/2002%20Air%20Photo%20-%20MrSID/cochrane.sid
+https://files.cochrane.ca/GIS_Files/2002%20Aerial%20Products/2002%20Air%20Photo%20-%20MrSID/cochrane.sid.aux.xml
