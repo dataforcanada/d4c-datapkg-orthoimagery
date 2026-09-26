@@ -1,0 +1,43 @@
+# Python environment for this repo, and for the dev-container image that runs it
+# (docker/python/Dockerfile installs exactly this with `uv sync --locked`).
+#
+# There is no Python source here — the repo is shell scripts, VRTs and metadata —
+# so `package = false` below: uv installs the dependencies and never tries to
+# build or install the project itself.
+#
+# Versions: this file carries lower bounds, `uv.lock` carries the exact pins for
+# the *whole* transitive tree. Both are committed, and the image build runs
+# `uv sync --locked`, so a rebuild resolves to byte-identical versions. Bump
+# deliberately, then rebuild + re-verify:
+#   uv lock --upgrade-package rasterio     # one package
+#   uv lock --upgrade                      # everything
+# (The bounds below are the versions pinned 2026-09-14, all supporting Python
+# 3.14 — the Ubuntu 26.04 system interpreter the image uses.)
+
+[project]
+name = "d4c-datapkg-orthoimagery"
+version = "0.0.0"
+description = "Orthoimagery data packages for Data for Canada"
+requires-python = ">=3.14"
+dependencies = [
+    "dask[array]>=2026.8.0",
+    "numpy>=2.5.3",
+    "portolan-cli>=0.8.0",
+    "rasterio>=1.5.1",
+    "rioxarray>=0.23.0",
+    "xarray>=2026.7.0",
+]
+
+[tool.uv]
+# No Python package of our own to build/install — dependencies only.
+package = false
+
+# These wheels bundle their own libgdal, which would shadow the image's GDAL
+# (built with ECW + MrSID) and silently lose both drivers. Building them from
+# source makes them link against the image's libgdal via `gdal-config`.
+# portolan-cli pulls in both rasterio and pyogrio, so this is load-bearing.
+#
+# docker/python/uv.toml says the same thing image-wide (for ad-hoc
+# `uv pip install` inside the container); this key is the project's own copy so
+# `uv sync` is correct on its own terms, independent of that file.
+no-binary-package = ["rasterio", "fiona", "pyogrio", "gdal"]

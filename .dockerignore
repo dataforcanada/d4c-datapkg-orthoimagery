@@ -1,0 +1,30 @@
+# Build context for docker/python/Dockerfile (stage 2), whose context is the
+# repo root because that is where pyproject.toml and uv.lock live.
+#
+# scripts/ and data/ hold hundreds of GB of orthoimagery. Without this file
+# every build would try to ship all of it to the daemon, so: exclude everything,
+# then re-admit only the four files the Dockerfile actually COPYs.
+#
+# `*` matches top-level entries only, but a path whose *parent* matches is
+# excluded too, so data/, scripts/ and .git/ are excluded whole. The `!` lines
+# re-admit paths under the (excluded) docker/ directory; BuildKit resolves those
+# by descending only where an exception could match, so the giant trees below
+# are never walked.
+#
+# Stage 1 (docker/gdal/build.sh) is unaffected: its contexts are docker/gdal and
+# the GDAL source checkout, never the repo root.
+
+*
+
+!pyproject.toml
+!uv.lock
+!docker/python/uv.toml
+!docker/python/verify_gdal_drivers.py
+
+# Belt-and-braces. Already covered by `*` above, but stated explicitly and last
+# (last match wins) so these can never be dragged in by a future edit that
+# loosens the blanket exclusion.
+data
+scripts
+.git
+**/__pycache__

@@ -13,9 +13,13 @@ Checks
   2. `gdalinfo --formats` lists ECW and MrSID.
   3. `rasterio.__gdal_version__` == expected GDAL version.
   4. `rasterio.Env().drivers()` includes ECW and MrSID.
-  5. The libgdal mapped into this Python process is the system one, and there
-     is exactly one — i.e. no wheel-bundled libgdal shadowing it.
-  6. rioxarray can open a raster through that stack (in-memory GeoTIFF only;
+  5. `pyogrio.__gdal_version_string__` == expected GDAL version. pyogrio is the
+     other GDAL-linked extension in the image (pulled in by portolan-cli) and
+     its wheels bundle libgdal too.
+  6. The libgdal mapped into this Python process is the system one, and there
+     is exactly one — i.e. no wheel-bundled libgdal shadowing it. This runs
+     after both extensions are imported, so it covers rasterio and pyogrio.
+  7. rioxarray can open a raster through that stack (in-memory GeoTIFF only;
      no ECW/MrSID files are touched).
 
 The expected version comes from --expect-gdal, else $D4C_GDAL_VERSION (baked
@@ -94,7 +98,21 @@ def main() -> None:
             fail(f"{drv} missing from rasterio.Env().drivers() ({len(drivers)} drivers registered)")
     ok("rasterio.Env().drivers() includes ECW and MrSID")
 
-    # 5. exactly one libgdal in this process, and it is the system one
+    # 5. pyogrio links against the pinned GDAL too. Imported here, before the
+    #    libgdal count below, so a wheel-bundled libgdal of its own is caught.
+    try:
+        import pyogrio
+    except ImportError as exc:
+        fail(f"cannot import pyogrio: {exc}")
+    if pyogrio.__gdal_version_string__ != expected:
+        fail(
+            f"pyogrio.__gdal_version_string__ is {pyogrio.__gdal_version_string__!r}, "
+            f"expected {expected!r} — pyogrio is not using the image's GDAL "
+            "(was a PyPI wheel with bundled libgdal installed?)"
+        )
+    ok(f"pyogrio {pyogrio.__version__} reports GDAL {pyogrio.__gdal_version_string__}")
+
+    # 6. exactly one libgdal in this process, and it is the system one
     with open("/proc/self/maps") as maps:
         libgdal = sorted(
             {line.split()[-1] for line in maps if "/libgdal" in line and line.split()[-1].startswith("/")}
@@ -105,7 +123,7 @@ def main() -> None:
         fail(f"libgdal is loaded from {libgdal[0]}, not from the system GDAL under /usr/lib/")
     ok(f"single system libgdal in process: {libgdal[0]}")
 
-    # 6. rioxarray works end-to-end on an in-memory GeoTIFF
+    # 7. rioxarray works end-to-end on an in-memory GeoTIFF
     try:
         import numpy as np
         import rioxarray

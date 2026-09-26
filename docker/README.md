@@ -16,7 +16,7 @@ back here instead of a cryptic "pull access denied".
 | Stage | Image | Contents |
 | --- | --- | --- |
 | 1 | `dataforcanada/gdal-ecw-mrsid:3.13.3` | OSGeo's `ubuntu-full` GDAL build (Ubuntu 26.04, PROJ 9.8.1, all PROJ grids) plus the **ECW** (libecwj2 3.3) and **MrSID** (DSDK 9.5.5) drivers. Built from GDAL's own `docker/ubuntu-full/Dockerfile`, unmodified. |
-| 2 | `dataforcanada/gdal-ecw-mrsid-python:3.13.3` | `FROM` stage 1. `uv`-managed venv at `/opt/venv` (system Python 3.14) with `rioxarray`, `rasterio` (compiled against the image's GDAL), `xarray`, `dask[array]`, `numpy`. Non-root user `d4c`. This is what the dev container runs. |
+| 2 | `dataforcanada/gdal-ecw-mrsid-python:3.13.3` | `FROM` stage 1. `uv`-managed venv at `/opt/venv` (system Python 3.14) holding the dependency set from the repo's [`pyproject.toml`](../pyproject.toml) + [`uv.lock`](../uv.lock): `rioxarray`, `rasterio` and `pyogrio` (both compiled against the image's GDAL), `xarray`, `dask[array]`, `numpy`, `portolan-cli`. Non-root user `d4c`. This is what the dev container runs. |
 
 ## Prerequisites
 
@@ -147,28 +147,43 @@ and then re-runs the assertions against the finished image as the runtime
 user. Environment knobs: `GDAL_VERSION`, `GDAL_IMAGE`, `IMAGE`, `TAG`,
 `USER_UID`/`USER_GID` (default 1000/1000).
 
+The **build context is the repo root**, not `docker/python/`, because
+`pyproject.toml` and `uv.lock` live there and the image is built from them.
+[`.dockerignore`](../.dockerignore) excludes everything and re-admits only the
+four files the Dockerfile copies, so the context stays a few KB instead of the
+hundreds of GB under `data/` and `scripts/`. (Stage 1 is unaffected — its
+contexts are `docker/gdal` and the GDAL source checkout.)
+
 Key points, all enforced inside the Dockerfile so the image cannot be built
 with them violated:
 
-- **rasterio is compiled from source** with `uv pip install --no-binary rasterio`.
-  rasterio's PyPI wheels bundle their own libgdal (the 1.5.1 wheel ships GDAL
+- **rasterio and pyogrio are compiled from source**, via
+  `uv sync --no-binary-package rasterio --no-binary-package pyogrio`. Their
+  PyPI wheels bundle their own libgdal (the rasterio 1.5.1 wheel ships GDAL
   3.12.4, without ECW/MrSID) that would shadow the image's GDAL; the sdist
-  build links against it via `gdal-config` instead. Flag spelling matters:
-  `uv pip install` takes pip-style `--no-binary <pkg>`, while
-  `--no-binary-package <pkg>` belongs to `uv sync`/`uv add`. The image also
-  installs [`python/uv.toml`](python/uv.toml) as `/etc/uv/uv.toml`, listing
-  `rasterio fiona pyogrio gdal` for *both* interfaces, so anything you install
-  later inside the container is forced from source too (fiona/pyogrio wheels
-  bundle GDAL as well). Note `UV_NO_BINARY_PACKAGE` is not used: it only
-  affects `uv sync`/`uv add`, not `uv pip install` (verified on uv 0.12.13).
+  builds link against it via `gdal-config` instead. pyogrio matters now because
+  `portolan-cli` depends on it. This is stated in three places, deliberately:
+  `[tool.uv] no-binary-package` in [`../pyproject.toml`](../pyproject.toml) (so
+  `uv sync` is correct on its own terms), `/etc/uv/uv.toml` from
+  [`python/uv.toml`](python/uv.toml) (so ad-hoc installs in the container are
+  forced from source too), and the explicit flags in the Dockerfile. Flag
+  spelling matters: `uv pip install` takes pip-style `--no-binary <pkg>`, while
+  `--no-binary-package <pkg>` belongs to `uv sync`/`uv add`. Note
+  `UV_NO_BINARY_PACKAGE` is not used: it only affects `uv sync`/`uv add`, not
+  `uv pip install` (verified on uv 0.12.13).
 - **No `libgdal-dev` from apt.** The base image already ships `gdal-config`,
   the headers and `libgdal.so` for the pinned GDAL; Ubuntu's `libgdal-dev`
   would add a second, driver-less GDAL next to it — exactly the shadowing this
   image exists to prevent (GDAL's own `docker/README.md` warns against it).
   Only `build-essential` and `python3-dev` are added, and the build refuses to
   continue if any `libgdal*` apt package is installed.
-- Packages are pinned in [`python/requirements.txt`](python/requirements.txt);
-  the venv uses the system Python 3.14 (`UV_PYTHON_DOWNLOADS=never`).
+- Packages come from [`../pyproject.toml`](../pyproject.toml) and
+  [`../uv.lock`](../uv.lock), installed with `uv sync --locked` — the build
+  fails if the two have drifted apart, so the image can never be built from an
+  unlocked dependency set. The lock pins the whole transitive tree (119
+  packages), not just the six direct ones. The venv uses the system Python 3.14
+  (`UV_PYTHON_DOWNLOADS=never`), and `UV_PROJECT_ENVIRONMENT=/opt/venv` makes
+  uv's project commands target it rather than creating a `./.venv`.
 - The last build step runs `verify-gdal-drivers`
   ([`python/verify_gdal_drivers.py`](python/verify_gdal_drivers.py)), which
   asserts:
@@ -176,9 +191,11 @@ with them violated:
   2. `gdalinfo --formats` lists ECW and MrSID;
   3. `rasterio.__gdal_version__` == the pinned GDAL;
   4. `rasterio.Env().drivers()` includes ECW and MrSID;
-  5. exactly one `libgdal` is mapped into the Python process and it is the
-     system one (no wheel-bundled copy);
-  6. rioxarray round-trips an in-memory GeoTIFF.
+  5. `pyogrio.__gdal_version_string__` == the pinned GDAL;
+  6. exactly one `libgdal` is mapped into the Python process and it is the
+     system one (no wheel-bundled copy) — checked after both rasterio and
+     pyogrio are imported, so it covers either of them bundling a copy;
+  7. rioxarray round-trips an in-memory GeoTIFF.
 
   `verify-gdal-drivers` is on `PATH` in the image; run it any time (the dev
   container runs it as `postCreateCommand`).
@@ -188,9 +205,24 @@ with them violated:
 `.devcontainer/devcontainer.json` points at `dataforcanada/gdal-ecw-mrsid-python:3.13.3`
 directly — no build on the VS Code side. `remoteUser` is `d4c`; VS Code remaps
 its UID/GID to yours on first start so files in the bind-mounted workspace keep
-sane ownership. The venv at `/opt/venv` is owned by that user, so
-`uv pip install <pkg>` works inside the container without root (and honours
-the no-binary rule above).
+sane ownership. The venv at `/opt/venv` is owned by that user, so installing
+works inside the container without root (and honours the no-binary rule above).
+
+Because the image sets `UV_PROJECT_ENVIRONMENT=/opt/venv`, uv's project commands
+run from the workspace root operate on that venv directly — no `.venv` is
+created and nothing needs activating:
+
+```bash
+uv add portolan-cli         # edits pyproject.toml + uv.lock, installs to /opt/venv
+uv remove dask
+uv sync                     # bring /opt/venv back in line with uv.lock
+uv lock --upgrade-package rasterio
+```
+
+Commit the resulting `pyproject.toml` and `uv.lock`. They are what the next
+image build installs, so a dependency added this way survives a rebuild — but
+only after `docker/python/build.sh` is re-run. `uv pip install <pkg>` still
+works for a throwaway package you do not want recorded.
 
 Headless check with the Dev Containers CLI:
 
@@ -217,10 +249,15 @@ npx --yes @devcontainers/cli@latest exec --workspace-folder . verify-gdal-driver
   -DMRSID_ROOT=/opt/Raster_DSDK` on the `GDAL_CMAKE_EXTRA_OPTS` echo line
   and `Found ECW` / `Found MRSID` from CMake.
 - **`rasterio.__gdal_version__` mismatch in stage 2** (e.g. it reports 3.12.4)
-  — a rasterio wheel got installed. Check that `--no-binary rasterio` and
-  `/etc/uv/uv.toml` are in effect (`uv pip install --dry-run -v rasterio`
-  should log `Selecting: rasterio==… (rasterio-….tar.gz)`) and that no
-  `libgdal*` apt package is present.
+  — a rasterio wheel got installed. Check that the `--no-binary-package` flags,
+  `[tool.uv] no-binary-package` in `pyproject.toml` and `/etc/uv/uv.toml` are in
+  effect: `uv sync -v` should log `Built rasterio==…` (not a wheel download),
+  and `uv pip install --dry-run -v rasterio` should log
+  `Selecting: rasterio==… (rasterio-….tar.gz)`. Also confirm no `libgdal*` apt
+  package is present. The same applies to `pyogrio.__gdal_version__`.
+- **`the lockfile is not up-to-date with pyproject.toml`** during stage 2 —
+  someone edited `pyproject.toml` without re-locking. Run `uv lock` at the repo
+  root, commit the result, and rebuild.
 - **"this image is linux/amd64 only"** — you are building on a non-x86_64
   daemon; see Prerequisites.
 - **Stale grids / wrong PROJ** — see the PROJ notes under stage 1.
