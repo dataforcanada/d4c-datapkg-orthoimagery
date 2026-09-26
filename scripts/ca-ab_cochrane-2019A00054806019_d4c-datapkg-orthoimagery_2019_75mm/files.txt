@@ -1,0 +1,5 @@
+https://files.cochrane.ca/GIS_Files/2019%20Aerial%20Products/2019%20Air%20Photo%20-%20MrSID/ABTCOC19_Combined_Delivery.prj
+https://files.cochrane.ca/GIS_Files/2019%20Aerial%20Products/2019%20Air%20Photo%20-%20MrSID/ABTCOC19_Combined_Delivery.sdw
+https://files.cochrane.ca/GIS_Files/2019%20Aerial%20Products/2019%20Air%20Photo%20-%20MrSID/ABTCOC19_Combined_Delivery.sid
+https://files.cochrane.ca/GIS_Files/2019%20Aerial%20Products/2019%20Air%20Photo%20-%20MrSID/ABTCOC19_Combined_Delivery.sid.aux.xml
+https://files.cochrane.ca/GIS_Files/2019%20Aerial%20Products/2019%20Air%20Photo%20-%20MrSID/ABTCOC19_Combined_Delivery.sid.xml
