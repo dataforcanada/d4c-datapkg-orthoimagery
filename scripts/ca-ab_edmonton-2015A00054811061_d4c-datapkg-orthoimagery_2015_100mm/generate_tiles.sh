@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PROJECT_DIR="~/Projects/dataforcanada/d4c-datapkg-orthoimagery"
+PROJECT_DIR="~/Documents/Personal/Projects/dataforcanada/d4c-datapkg-orthoimagery"
 DATA_DIR="${PROJECT_DIR}/data"
 DATA_OUTPUT_DIR="${DATA_DIR}/output/"
 DATASET_ID="ca-ab_edmonton-2015A00054811061_d4c-datapkg-orthoimagery_2015_100mm"
