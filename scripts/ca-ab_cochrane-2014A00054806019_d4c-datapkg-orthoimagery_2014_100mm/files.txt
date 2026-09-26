@@ -1,0 +1,5 @@
+https://files.cochrane.ca/GIS_Files/2014%20Aerial%20Products/2014%20Air%20Photo%20-%20MrSID/July01_2014CochraneProjected.aux
+https://files.cochrane.ca/GIS_Files/2014%20Aerial%20Products/2014%20Air%20Photo%20-%20MrSID/July01_2014CochraneProjected.sdw
+https://files.cochrane.ca/GIS_Files/2014%20Aerial%20Products/2014%20Air%20Photo%20-%20MrSID/July01_2014CochraneProjected.sid
+https://files.cochrane.ca/GIS_Files/2014%20Aerial%20Products/2014%20Air%20Photo%20-%20MrSID/July01_2014CochraneProjected.sid.aux.xml
+https://files.cochrane.ca/GIS_Files/2014%20Aerial%20Products/2014%20Air%20Photo%20-%20MrSID/July01_2014CochraneProjected.sid.xml
