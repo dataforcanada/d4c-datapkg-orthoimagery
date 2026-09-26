@@ -25,5 +25,11 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# uv writes the environment to /opt/venv in the dev container
+# (UV_PROJECT_ENVIRONMENT), but a stray local .venv is easy to create elsewhere.
+# pyproject.toml and uv.lock are both committed on purpose.
+.venv/
+.ruff_cache/
+
 # GDAL source checkout used by docker/gdal/build.sh
 docker/gdal/src/
