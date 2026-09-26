@@ -1,0 +1,2 @@
+https://gis.lethbridge.ca/opendata/aerialimagery/aerial_lethbridge2009.zip
+https://gis.lethbridge.ca/opendata/aerialimagery/aerial_wasteandrecycling2009.zip
