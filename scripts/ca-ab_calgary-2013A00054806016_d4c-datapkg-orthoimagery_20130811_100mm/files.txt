@@ -1,0 +1,7 @@
+https://data.calgary.ca/api/views/798f-7jh6/files/5c3803cb-2a1e-4aee-8a89-ec586fda1976?download=true&filename=Calgary%20Orthophoto%202013%20Flood%20Metadata.pdf
+https://data.calgary.ca/api/views/798f-7jh6/files/31951049-fc45-4435-8ded-a9a78a951c4b?download=true&filename=Calgary%20Orthophoto%202013%20Flood%20Coverage%20Map.pdf
+https://data.calgary.ca/api/views/798f-7jh6/files/bcbb3d04-1fb0-443f-8c9c-eb26d8871eb0?download=true&filename=Calgary%20Orthophoto%20All%20Years%20List%20with%20GIS%20web%20links.pdf
+https://data.calgary.ca/api/views/798f-7jh6/files/c8c80975-f8f2-409d-9cc4-553b49578c66?download=true&filename=Calgary_2013-08-11_post_flood_Twp22%20(0.92%20GB).zip
+https://data.calgary.ca/api/views/798f-7jh6/files/b76f5488-d914-4bbe-ada2-1443b42896e4?download=true&filename=Calgary_2013-08-11_post_flood_Twp23%20(1.25%20GB).zip
+https://data.calgary.ca/api/views/798f-7jh6/files/f9c4622a-8f34-4c0f-a558-ec57249b0d76?download=true&filename=Calgary_2013-08-11_post_flood_Twp24%20(1.50%20GB).zip
+https://data.calgary.ca/api/views/798f-7jh6/files/fd1408d3-65e8-4923-adb8-8aced6603007?download=true&filename=Calgary_2013-08-11_post_flood_Twp25%20(0.36%20GB).zip
