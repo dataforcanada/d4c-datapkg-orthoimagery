@@ -1,0 +1,1 @@
+/home/ripd/Documents/Personal/Projects/dataforcanada/d4c-datapkg-orthoimagery/data/input/ca-bc_vancouver-2008A00055915022_d4c-datapkg-orthoimagery_2008_100mm/01-BC.ecw: Can't create projection transformation
