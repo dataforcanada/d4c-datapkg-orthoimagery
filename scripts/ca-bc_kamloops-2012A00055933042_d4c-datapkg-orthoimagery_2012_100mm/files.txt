@@ -1,0 +1,4 @@
+https://maps.kamloops.ca/opendata/Ortho/Sid/2012/Kamloops2012_SID4.zip
+https://maps.kamloops.ca/opendata/Ortho/Sid/2012/Kamloops2012_SID3.zip
+https://maps.kamloops.ca/opendata/Ortho/Sid/2012/Kamloops2012_SID1.zip
+https://maps.kamloops.ca/opendata/Ortho/Sid/2012/Kamloops2012_SID2.zip
