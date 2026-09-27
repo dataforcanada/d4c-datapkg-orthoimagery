@@ -1,0 +1,3 @@
+https://get.orthoimage.download/Peel_75mm_2021.tif
+https://get.orthoimage.download/Peel_75mm_2021.tif.aux.xml
+https://get.orthoimage.download/Peel_75mm_2021.tif.ovr
