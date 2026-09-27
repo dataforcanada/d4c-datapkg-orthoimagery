@@ -6,7 +6,7 @@ Look through our [d4c-datapkg-orthoimagery](https://github.com/dataforcanada/d4c
 
 Here is a table of some of the datasets created from the current process.
 
-| Place | ISO | Year | Provider | Dataset ID & Preview |
+| Place | ISO | Year | Provider | Preview & Download |
 | --- | --- | --- | --- | --- |
 | Edmonton | CA-AB | 2015 | Edmonton | [ca-ab_edmonton-2015A00054811061_d4c-datapkg-orthoimagery_2015_100mm_v0.1.0-beta](https://source.coop/dataforcanada/d4c-datapkg-orthoimagery/processed/ca-ab_edmonton-2015A00054811061_d4c-datapkg-orthoimagery_2015_100mm_v0.1.0-beta.pmtiles) |
 | Edmonton | CA-AB | 2017 | Edmonton | [ca-ab_edmonton-2017A00054811061_d4c-datapkg-orthoimagery_2017_100mm_v0.1.0-beta](https://source.coop/dataforcanada/d4c-datapkg-orthoimagery/processed/ca-ab_edmonton-2017A00054811061_d4c-datapkg-orthoimagery_2017_100mm_v0.1.0-beta.pmtiles) |
