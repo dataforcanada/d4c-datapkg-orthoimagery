@@ -1,6 +1,17 @@
 # d4c-datapkg-orthoimagery
 
+Orthoimagery, aerial imagery and satellite imagery for Canadian places, collected from municipal, provincial and other open data providers and republished in cloud native formats.
+
 Look through our [d4c-datapkg-orthoimagery](https://github.com/dataforcanada/d4c-datapkg-orthoimagery) repo for the datasets that are currently being processed and datasets being acquired.
+
+## Data Layout
+
+The data is hosted on [Source Cooperative](https://source.coop/dataforcanada/d4c-datapkg-orthoimagery) and organized into two folders:
+
+| Folder | Contents |
+| --- | --- |
+| [archive/](https://source.coop/dataforcanada/d4c-datapkg-orthoimagery/archive) | The raw input data exactly as it was received from each provider, kept for provenance and reproducibility. |
+| [processed/](https://source.coop/dataforcanada/d4c-datapkg-orthoimagery/processed) | Data that has been converted into cloud native formats, such as [Cloud Optimized GeoTIFF (COG)](https://cogeo.org/) and [PMTiles](https://docs.protomaps.com/pmtiles/), so it can be streamed and previewed directly over HTTP without downloading whole files. |
 
 ## Download and Preview
 
