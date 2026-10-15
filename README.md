@@ -1,6 +1,6 @@
 # d4c-datapkg-orthoimagery
 
-Orthoimagery, aerial imagery and satellite imagery for Canadian places, collected from municipal, provincial and other open data providers and republished in cloud native formats.
+Orthoimagery, aerial imagery and satellite imagery for Canada, collected from municipal, provincial and other open data providers and republished in cloud native formats.
 
 Look through our [d4c-datapkg-orthoimagery](https://github.com/dataforcanada/d4c-datapkg-orthoimagery) repo for the datasets that are currently being processed and datasets being acquired.
 
