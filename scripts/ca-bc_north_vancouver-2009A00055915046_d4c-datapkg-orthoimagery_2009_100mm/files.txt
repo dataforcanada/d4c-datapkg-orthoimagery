@@ -1,0 +1,3 @@
+https://geoweb.dnv.org/Products/Data/ECW/ImgOrthoimagery2009_west_ecw.zip
+https://geoweb.dnv.org/Products/Data/ECW/ImgOrthoimagery2009_central_ecw.zip
+https://geoweb.dnv.org/Products/Data/ECW/ImgOrthoimagery2009_east_ecw.zip
